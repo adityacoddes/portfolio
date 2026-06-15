@@ -1,0 +1,195 @@
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (TECHNICAL EDITORIAL EDITION)
+   ========================================================================== */
+
+/* Tablet & Smaller Screens */
+@media screen and (max-width: 900px) {
+  :root {
+    --space-10: 64px;
+    --space-9: 48px;
+    --space-8: 32px;
+  }
+
+  /* Hero Layout Wrap */
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    text-align: center;
+  }
+  
+  #hero .hero-content {
+    order: 2;
+  }
+  
+  .hero-image {
+    order: 1;
+  }
+  
+  #hero .image-container {
+    max-width: 260px;
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero-shortcut-hint {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  /* About Layout Wrap */
+  #about .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  #about .about-text-content {
+    order: 2;
+  }
+
+  #about .image-container {
+    order: 1;
+    max-width: 280px;
+    margin-bottom: var(--space-4);
+  }
+
+  /* GATIS Dashboard Wrap */
+  .gatis-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Project Grid */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Timeline Content Column Wrap */
+  .timeline-content-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .timeline-item-photo {
+    max-height: 200px;
+  }
+
+  /* Skills & Hobbies Grid */
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 600px) {
+  :root {
+    --space-10: 48px;
+    --space-9: 32px;
+    --space-8: 24px;
+    --container-pad: var(--space-4);
+  }
+
+  /* Header mobile adjustment */
+  header.site-header {
+    padding: var(--space-2) 0;
+  }
+
+  header.site-header .nav-container {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  header.site-header nav ul {
+    gap: var(--space-3);
+  }
+
+  header.site-header nav a {
+    font-size: var(--text-2xs);
+  }
+
+  /* Typography size reduction */
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: var(--space-4);
+  }
+
+  /* GATIS Controls layout */
+  .gatis-controls {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  /* Projects & Learning Grids */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .learning-board-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  /* Timeline alignment */
+  .timeline-wrapper::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    padding-left: 30px;
+  }
+
+  .timeline-dot {
+    left: 6px;
+  }
+
+  .timeline-title {
+    font-size: 1.15rem;
+  }
+
+  /* Skills & Hobbies */
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .skill-open-source-note {
+    grid-column: span 1;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* Contact and buttons */
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Status Bar - Hide elements to fit mobile screens */
+  .status-bar {
+    padding: 6px var(--space-3);
+  }
+
+  .status-bar__feed {
+    display: none !important;
+  }
+
+  .status-bar__shortcuts {
+    display: none !important;
+  }
+}

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Aditya Wadekar - third-year Robotics & Automation student developing skills in Machine Learning, Data Science, and intelligent systems.">
+  <meta name="keywords" content="Aditya Wadekar, Machine Learning Portfolio, Robotics student, Data Science, AISSMS COE, Pune, open source pandas">
+  <meta name="author" content="Aditya Wadekar">
+  
+  <title>Aditya Wadekar | Intelligent Systems & ML Engineering Student</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=1.3">
+  <link rel="stylesheet" href="css/global.css?v=1.3">
+  <link rel="stylesheet" href="css/sections.css?v=1.3">
+  <link rel="stylesheet" href="css/keyboard.css?v=1.3">
+  <link rel="stylesheet" href="css/responsive.css?v=1.3">
+</head>
+<body>
+
+  <!-- Custom Mouse Cursor Elements -->
+  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="custom-cursor-ring" class="custom-cursor-ring"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        ADITYA WADEKAR
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#gatis" class="active link-animate">PROJECTS</a></li>
+          <li><a href="#skills" class="link-animate">SKILLS</a></li>
+          <li><a href="#learning" class="link-animate">CURRENTLY</a></li>
+          <li><a href="#hobbies" class="link-animate">BEYOND</a></li>
+          <li><a href="#contact" class="link-animate">CONTACT</a></li>
+        </ul>
+        <button class="theme-toggle-btn" onclick="keyboardEngine.toggleTheme()">[D] THEME</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section (Header / Introduction) -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    
+    <div class="container">
+      <div class="hero-wrapper">
+        <div class="hero-content">
+          <div class="badge badge-blue hero-animate-fade hero-delay-1">[00 // INTRODUCTION]</div>
+          <h1 class="hero-animate-fade hero-delay-2">
+            Hello, I am<br>Aditya Wadekar<span class="cursor-blink"></span>
+          </h1>
+          <p class="hero-mono-label hero-animate-fade hero-delay-3">
+            Machine Learning & Robotics Student
+          </p>
+          <p class="subtitle hero-animate-fade hero-delay-4">
+            I am entering my third year of Robotics & Automation Engineering. I write data pipelines, design predictive models, and explore how algorithms make physical systems smarter.
+          </p>
+          
+          <div class="hero-actions hero-animate-fade hero-delay-5">
+            <a href="#gatis" class="btn btn-primary">view my projects</a>
+            <a href="#contact" class="btn btn-outline">get in touch</a>
+          </div>
+          
+          <div class="hero-shortcut-hint hero-animate-fade hero-delay-5">
+            <span>Navigation Shortcuts:</span>
+            <div>Press <span class="key">J</span> / <span class="key">K</span> to scroll sections</div>
+            <div>Press <span class="key">D</span> to toggle dark mode</div>
+            <div>Press <span class="key">H</span> to view keyboard guide</div>
+          </div>
+        </div>
+        
+        <!-- Blue Kurta Portrait in Hero on Right -->
+        <div class="hero-image hero-animate-fade hero-delay-3">
+          <div class="image-container">
+            <img src="assets/img/aditya_about.webp" alt="Aditya Wadekar portrait" />
+            <div class="image-shadow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project: GATIS (ML Primary Case Study) -->
+  <section id="gatis">
+    <div class="container">
+      <div class="gatis-grid">
+        <div class="gatis-info">
+          <div class="badge badge-signal">01 // Flagship Project</div>
+          <h2><span class="section-num">01.</span> GATIS Predictive Analytics</h2>
+          <p>
+            <strong>The Motivation:</strong> Climate anomalies and volatile trade policies cause severe disruptions in global food supplies. I wanted to build a predictive analytics system capable of forecasting crop yields and highlighting trading patterns to aid agricultural planning.
+          </p>
+          <p>
+            <strong>The Data Challenge:</strong> I engineered a memory-efficient Pandas pipeline to clean and process a dataset of <strong>1.1 Million historical records</strong> spanning FAOSTAT records across 203 countries and 280 crop categories.
+          </p>
+          <p>
+            <strong>The ML Approach:</strong> I trained localized <strong>Huber-regularized Ridge Regression models</strong> with degree-2 polynomial features. Huber loss was specifically selected to reduce sensitivity to agricultural weather anomaly outliers (droughts/floods), ensuring stable long-term predictions.
+          </p>
+          <p>
+            <strong>Lessons Learned:</strong> High-dimensional datasets require statistical rigor. I learned that handling outlier supply years with a robust loss function (Huber) prevents model skewing far better than simply feeding more data into complex neural networks.
+          </p>
+          
+          <div class="gatis-metric-row">
+            <div class="gatis-metric">
+              <span class="num">1.1M+</span>
+              <span class="label">FAOSTAT Records Processed</span>
+            </div>
+            <div class="gatis-metric">
+              <span class="num">203</span>
+              <span class="label">Countries Modeled</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gatis-visual">
+          <div class="gatis-dashboard">
+            <div class="dashboard-header">
+              <div class="dashboard-title">gatis.py</div>
+              <div class="dashboard-status">STATUS: ONLINE</div>
+            </div>
+            
+            <div class="dashboard-body">
+              <div class="gatis-controls">
+                <div class="control-group">
+                  <label for="gatis-crop">SELECT CROP</label>
+                  <select id="gatis-crop">
+                    <option value="wheat">Wheat (15)</option>
+                    <option value="rice">Rice (27)</option>
+                    <option value="maize">Maize (56)</option>
+                    <option value="potatoes">Potatoes (116)</option>
+                    <option value="soybeans">Soybeans (236)</option>
+                    <option value="barley">Barley (44)</option>
+                    <option value="sugarcane">Sugarcane (156)</option>
+                  </select>
+                </div>
+                
+                <div class="control-group">
+                  <div class="slider-val-container">
+                    <label for="gatis-year">FORECAST YEAR</label>
+                    <span id="gatis-year-val">2027</span>
+                  </div>
+                  <input type="range" id="gatis-year" min="2027" max="2031" value="2027">
+                </div>
+              </div>
+              
+              <div class="gatis-canvas-container">
+                <div class="gatis-canvas-header">
+                  <span>YIELD PREDICTION CURVE (TONNES/HECTARE)</span>
+                  <span>MODEL: POLY-RIDGE-HUBER</span>
+                </div>
+                <canvas id="gatis-chart"></canvas>
+              </div>
+              
+              <div class="gatis-stats-footer">
+                <div class="footer-stat-box">
+                  <span class="val" id="gatis-stat-yield">3.20 t/ha</span>
+                  <span class="lbl">Predicted Yield</span>
+                </div>
+                <div class="footer-stat-box">
+                  <span class="val" id="gatis-stat-growth">+4.5%</span>
+                  <span class="lbl">Est. Growth</span>
+                </div>
+                <div class="footer-stat-box">
+                  <span class="val" id="gatis-stat-confidence">94.2%</span>
+                  <span class="lbl">Model Fit (R²)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Machine Learning Projects Grid -->
+  <section id="ml-projects">
+    <div class="container">
+      <div class="badge">02 // APPLICATIONS</div>
+      <h2><span class="section-num">02.</span> Machine Learning Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Project 1: Real Estate Analytics -->
+        <div class="project-card-wrapper">
+          <div class="editorial-card project-card">
+            <div class="project-card-header">
+              <div class="badge badge-blue">Predictive Modeling</div>
+              <h3 class="project-card-title">Real Estate ML Analytics</h3>
+            </div>
+            <div class="project-card-body">
+              <p>
+                An end-to-end data pipeline and machine learning regression model designed to predict property valuations using housing features and multivariate attributes.
+              </p>
+              <div class="tech-tag-container">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Scikit-Learn</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">EDA</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-card-expand-btn">
+                <span class="btn-label">Technical Details</span> &darr;
+              </button>
+            </div>
+            
+            <div class="project-drawer">
+              <div class="drawer-content">
+                <h4>Motivation</h4>
+                <p>To understand the core structural factors (size, location indices, rooms) that impact real estate pricing, establishing an end-to-end pipeline from data cleaning to evaluation.</p>
+                <h4>Implementation</h4>
+                <ul>
+                  <li>Designed robust feature engineering scripts to handle missing records and normalize distributions.</li>
+                  <li>Executed thorough Exploratory Data Analysis (EDA) to resolve multi-collinearity.</li>
+                  <li>Trained and compared regularized regression models (Lasso & Ridge) to ensure generalization.</li>
+                </ul>
+                <h4>Lessons Learned</h4>
+                <p>Feature scaling and proper handling of categorical variables are critical. I learned how multi-collinearity can inflate regression coefficients and how regularization stabilizes model weight calculations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Personalized Recommendation Engine -->
+        <div class="project-card-wrapper">
+          <div class="editorial-card project-card">
+            <div class="project-card-header">
+              <div class="badge badge-blue">Data Engineering</div>
+              <h3 class="project-card-title">Content Recommendation System</h3>
+            </div>
+            <div class="project-card-body">
+              <p>
+                A content-based recommendation system that analyzes metadata features to suggest tailored choices based on cosine similarity scores.
+              </p>
+              <div class="tech-tag-container">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Cosine Similarity</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Vectorization</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-card-expand-btn">
+                <span class="btn-label">Technical Details</span> &darr;
+              </button>
+            </div>
+            
+            <div class="project-drawer">
+              <div class="drawer-content">
+                <h4>Motivation</h4>
+                <p>Exploring feature representation matrices and metric spaces to compute similarity scores between textual metadata entries.</p>
+                <h4>Implementation</h4>
+                <ul>
+                  <li>Processed high-volume datasets utilizing Pandas to clean text descriptions and compile matrices.</li>
+                  <li>Calculated bag-of-words metadata representations and extracted content attributes.</li>
+                  <li>Implemented Cosine Similarity algorithms to rank and output top-N recommendations.</li>
+                </ul>
+                <h4>Lessons Learned</h4>
+                <p>Matrix operations scale quadratically with dataset width. I learned how sparsity impacts performance and how to write clean vector math scripts rather than looping manually.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Email Spam Classification -->
+        <div class="project-card-wrapper">
+          <div class="editorial-card project-card">
+            <div class="project-card-header">
+              <div class="badge badge-blue">Natural Language Processing</div>
+              <h3 class="project-card-title">Email Spam Detection</h3>
+            </div>
+            <div class="project-card-body">
+              <p>
+                An NLP classification script designed to tokenize emails, extract TF-IDF features, and filter spam using Naive Bayes classifiers.
+              </p>
+              <div class="tech-tag-container">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">TF-IDF</span>
+                <span class="tech-tag">Naive Bayes</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-card-expand-btn">
+                <span class="btn-label">Technical Details</span> &darr;
+              </button>
+            </div>
+            
+            <div class="project-drawer">
+              <div class="drawer-content">
+                <h4>Motivation</h4>
+                <p>Gaining hands-on familiarity with text processing pipelines, vector representations of words, and discrete probability-based classification.</p>
+                <h4>Implementation</h4>
+                <ul>
+                  <li>Engineered preprocessing steps including lowercasing, punctuation removal, and tokenization.</li>
+                  <li>Transformed raw string vectors using TF-IDF vectorization to capture word importances.</li>
+                  <li>Trained and evaluated Logistic Regression and Multinomial Naive Bayes models, measuring precision/recall.</li>
+                </ul>
+                <h4>Lessons Learned</h4>
+                <p>NLP models are highly sensitive to vocabulary preprocessing. I learned the trade-offs of using stop-word filtering and how to minimize false positives (classifying important mail as spam).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="badge">03 // TECHNICAL BLUEPRINT</div>
+      <h2><span class="section-num">03.</span> Skills & Technologies</h2>
+      
+      <div class="skills-container">
+        <!-- Category 1: Languages -->
+        <div class="editorial-card skill-category-card">
+          <div class="skill-category-title">
+            <span>LANGUAGES</span>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span>Python</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>SQL</span> <span class="bullet"></span></div>
+          </div>
+        </div>
+
+        <!-- Category 2: ML & Data Science -->
+        <div class="editorial-card skill-category-card">
+          <div class="skill-category-title">
+            <span>ML & DATA SCI</span>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span>Scikit-Learn</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Pandas & NumPy</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Predictive Models</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Time-Series</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>EDA</span> <span class="bullet"></span></div>
+          </div>
+        </div>
+
+        <!-- Category 3: Tools & Platforms -->
+        <div class="editorial-card skill-category-card">
+          <div class="skill-category-title">
+            <span>TOOLS & TECH</span>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span>FastAPI</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Plotly</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Git & GitHub</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Linux Shell</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Jupyter / Colab</span> <span class="bullet"></span></div>
+          </div>
+        </div>
+
+        <!-- Category 4: Robotics & Hardware -->
+        <div class="editorial-card skill-category-card">
+          <div class="skill-category-title">
+            <span>ROBOTICS / HW</span>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span>Arduino</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Sensor Integration</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Fusion 360 (CAD)</span> <span class="bullet"></span></div>
+            <div class="skill-item"><span>Scribus</span> <span class="bullet"></span></div>
+          </div>
+        </div>
+        
+        <!-- Open Source contribution integrated here -->
+        <div class="skill-open-source-note editorial-card">
+          <div class="note-title">
+            Open Source Exposure
+          </div>
+          <p>
+            Contributed documentation improvements and fixes to the <strong>Pandas</strong> open-source project, gaining exposure to collaborative software development workflows, unit testing, and coding standards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Currently Learning Board -->
+  <section id="learning">
+    <div class="container">
+      <div class="badge badge-signal">04 // LOGS</div>
+      <h2><span class="section-num">04.</span> Currently Learning & Building</h2>
+      
+      <div class="learning-board">
+        <div class="learning-board-header">
+          <div class="learning-board-dot"></div>
+          <span>ACTIVE MONITOR: REAL-TIME SYSTEM LOG</span>
+        </div>
+        <div class="learning-board-body">
+          <div class="learning-log-card">
+            <div class="learning-log-header">
+              <span>MODULE: ML_01</span>
+              <span>IN PROGRESS</span>
+            </div>
+            <h3 class="learning-log-title">Reinforcement Learning</h3>
+            <p class="learning-log-desc">
+              Studying Markov Decision Processes (MDPs) and Q-learning architectures to build autonomous decision-making loops for virtual agents, linking back to robotics trajectory planning.
+            </p>
+          </div>
+          
+          <div class="learning-log-card">
+            <div class="learning-log-header">
+              <span>MODULE: CV_02</span>
+              <span>IN PROGRESS</span>
+            </div>
+            <h3 class="learning-log-title">Computer Vision Pipelines</h3>
+            <p class="learning-log-desc">
+              Exploring OpenCV methodologies for feature extraction, contour mapping, and real-time feed processing to feed visual coordinates into predictive layers.
+            </p>
+          </div>
+
+          <div class="learning-log-card">
+            <div class="learning-log-header">
+              <span>MODULE: DE_03</span>
+              <span>IN PROGRESS</span>
+            </div>
+            <h3 class="learning-log-title">Data Engineering Pipelines</h3>
+            <p class="learning-log-desc">
+              Structuring robust ETL pipelines using FastAPI and optimized Pandas chunks to handle high-frequency sensor readings and database entries efficiently.
+            </p>
+          </div>
+
+          <div class="learning-log-card">
+            <div class="learning-log-header">
+              <span>MODULE: OS_04</span>
+              <span>IN PROGRESS</span>
+            </div>
+            <h3 class="learning-log-title">Open Source Contributions</h3>
+            <p class="learning-log-desc">
+              Reviewing active documentation issues in the Pandas dev repository to contribute further utility fixes and improve code guidelines for future users.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies / Beyond Engineering Section -->
+  <section id="hobbies">
+    <div class="container">
+      <div class="badge">05 // DIMENSIONS</div>
+      <h2><span class="section-num">05.</span> Beyond Engineering</h2>
+      
+      <div class="hobbies-grid">
+        <!-- Hobby 1: Football -->
+        <div class="editorial-card hobby-card">
+          <div class="hobby-icon-wrapper">
+            <span class="hobby-icon-label">[FTB]</span>
+            <h3 class="hobby-title" style="margin: 0;">Football</h3>
+          </div>
+          <p class="hobby-desc">
+            Playing as a defender has taught me team coordination, spatial strategy, and quick reactive thinking. It keeps me physically active and reinforces the value of keeping a cool head under pressure.
+          </p>
+        </div>
+
+        <!-- Hobby 2: Drums -->
+        <div class="editorial-card hobby-card">
+          <div class="hobby-icon-wrapper">
+            <span class="hobby-icon-label">[DRM]</span>
+            <h3 class="hobby-title" style="margin: 0;">Drums</h3>
+          </div>
+          <p class="hobby-desc">
+            Playing drums is all about independence of limbs, rhythm, and timing control. I find a fascinating parallel between coordinating different drum rhythms and programming multi-joint robotic kinematics!
+          </p>
+        </div>
+
+        <!-- Hobby 3: Public Speaking -->
+        <div class="editorial-card hobby-card">
+          <div class="hobby-icon-wrapper">
+            <span class="hobby-icon-label">[SPK]</span>
+            <h3 class="hobby-title" style="margin: 0;">Public Speaking</h3>
+          </div>
+          <p class="hobby-desc">
+            Anchoring fests and collaborative campus events has honed my verbal communication, allowing me to speak confidently in front of crowds and translate technical concepts into stories everyone can enjoy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <div class="badge badge-signal">LET'S CONNECT</div>
+        <h2>GET IN TOUCH</h2>
+        <p class="contact-text">
+          I am currently seeking ML / Data Science internship opportunities. If you are looking for an active student builder who takes initiative, works well with teams, and is eager to learn, let's talk.
+        </p>
+        
+        <a href="mailto:adityawadekar001@gmail.com" class="btn btn-primary">
+          SEND AN EMAIL
+        </a>
+        
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/adityawadekar1" target="_blank" class="btn btn-outline">
+            LINKEDIN
+          </a>
+          <a href="https://github.com/adityacoddes" target="_blank" class="btn btn-outline">
+            GITHUB
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Aditya Wadekar. All rights reserved.</p>
+      <p class="sub">Designed and built with Vanilla HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <!-- Persistent Bottom Status Bar (Codedgar Style) -->
+  <div class="status-bar">
+    <div class="status-bar__left">
+      <div class="status-bar__segment status-bar__mode" id="status-mode">VIEW</div>
+      <div class="status-bar__segment status-bar__location" id="status-location">src/sections/hero.html</div>
+    </div>
+    <div class="status-bar__center">
+      <div class="status-bar__segment status-bar__feed">
+        <span class="dot"></span> Active: Exploring Reinforcement Learning architectures
+      </div>
+    </div>
+    <div class="status-bar__right">
+      <div class="status-bar__segment status-bar__shortcuts">
+        [J/K] Nav | [D] Theme | <button id="status-help-btn">[H] Help</button>
+      </div>
+      <div class="status-bar__segment status-bar__clock" id="status-clock">00:00:00 IST</div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/canvas.js" defer></script>
+  <script src="js/widgets.js" defer></script>
+  <script src="js/keyboard.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

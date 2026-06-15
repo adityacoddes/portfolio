@@ -1,0 +1,90 @@
+/* ==========================================================================
+   DESIGN SYSTEM - VARIABLES & TOKENS (TECHNICAL EDITORIAL EDITION)
+   ========================================================================== */
+
+:root {
+  /* Color Tokens - Codedgar Reference Palette */
+  --color-black-900: #191818;   /* Deep Charcoal */
+  --color-blue-500: #1b5def;    /* Electric Royal Blue */
+  --color-blue-400: #4a7ff7;    /* Light Royal Blue */
+  --color-orange-500: #e25327;  /* Technical Vermilion */
+  --color-orange-400: #e8734b;
+  --color-green-500: #22c55e;
+  --color-cream-100: #f4f4f4;   /* Warm Cream */
+  --color-sand-100: #f0ece4;    /* Architectural Sand */
+  
+  /* UI Theme Variables (Light Theme - Default) */
+  --color-bg-primary: var(--color-cream-100);
+  --color-bg-secondary: var(--color-sand-100);
+  --color-bg-card: #ffffff;
+  --color-text-primary: var(--color-black-900);
+  --color-text-secondary: rgba(25, 24, 24, 0.7);
+  --color-text-muted: rgba(25, 24, 24, 0.45);
+  --color-text-inverse: var(--color-cream-100);
+  
+  --color-border: var(--color-black-900);
+  --color-border-subtle: rgba(25, 24, 24, 0.1);
+  --color-action-primary: var(--color-blue-500);
+  --color-accent-signal: var(--color-orange-500);
+  
+  /* Fonts */
+  --font-display: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Font Sizes */
+  --text-2xs: 0.7rem;    /* 11px */
+  --text-xs: 0.8rem;     /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-md: 1rem;       /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.35rem;    /* 21.6px */
+  --text-2xl: 1.75rem;   /* 28px */
+  
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+  
+  --container-max: 1180px;
+  --container-pad: var(--space-6);
+  
+  /* Motion & Speed */
+  --motion-fast: 0.16s;
+  --motion-medium: 0.24s;
+  --motion-slow: 0.32s;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft: cubic-bezier(0, 0, 0.2, 1);
+  
+  /* Z-Index */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-nav: 999;
+  --z-overlay: 1000;
+  --z-modal: 9000;
+  --z-cursor: 9997;
+  --z-cursor-ring: 9999;
+}
+
+/* Dark Mode Theme Variables (Applied via .dark class on html/body) */
+body.dark {
+  --color-bg-primary: var(--color-black-900);
+  --color-bg-secondary: #222121;
+  --color-bg-card: #2c2a2a;
+  --color-text-primary: var(--color-cream-100);
+  --color-text-secondary: rgba(244, 244, 244, 0.75);
+  --color-text-muted: rgba(244, 244, 244, 0.45);
+  --color-text-inverse: var(--color-black-900);
+  
+  --color-border: var(--color-cream-100);
+  --color-border-subtle: rgba(244, 244, 244, 0.15);
+  --color-action-primary: var(--color-blue-400);
+  --color-accent-signal: var(--color-orange-400);
+}
