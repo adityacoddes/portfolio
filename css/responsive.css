@@ -10,7 +10,26 @@
     --space-8: 32px;
   }
 
-  /* Hero Layout Wrap */
+  /* Header navigation wrap for tablet */
+  header.site-header .nav-container {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  header.site-header nav {
+    gap: var(--space-3);
+  }
+
+  header.site-header nav ul {
+    gap: var(--space-3);
+  }
+
+  /* Hero Layout Wrap & Spacing */
+  #hero {
+    padding-top: 110px; /* Space for fixed header on tablet */
+    padding-bottom: var(--space-8);
+  }
+
   .hero-wrapper {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -28,6 +47,11 @@
   #hero .image-container {
     max-width: 260px;
     margin-bottom: var(--space-4);
+  }
+
+  .hero-actions {
+    margin: 0 auto var(--space-5) auto;
+    justify-content: center;
   }
   
   .hero-shortcut-hint {
@@ -93,20 +117,53 @@
 
   /* Header mobile adjustment */
   header.site-header {
-    padding: var(--space-2) 0;
+    padding: var(--space-3) 0;
   }
 
   header.site-header .nav-container {
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  header.site-header nav {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: center;
   }
 
   header.site-header nav ul {
-    gap: var(--space-3);
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
   }
 
   header.site-header nav a {
-    font-size: var(--text-2xs);
+    font-size: var(--text-xs);
+    padding: 6px 8px;
+    display: inline-block;
+  }
+
+  .theme-toggle-btn {
+    width: auto;
+    align-self: center;
+    padding: 6px 12px;
+  }
+
+  /* Hero Spacing & Actions on Mobile */
+  #hero {
+    padding-top: 140px; /* Space for the taller stacked mobile header */
+    padding-bottom: var(--space-6);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto var(--space-5) auto;
+    gap: var(--space-2);
   }
 
   /* Typography size reduction */
@@ -119,10 +176,26 @@
     margin-bottom: var(--space-4);
   }
 
-  /* GATIS Controls layout */
+  /* GATIS Controls & Stats layout */
   .gatis-controls {
     grid-template-columns: 1fr;
     gap: var(--space-2);
+  }
+
+  .gatis-stats-footer {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .footer-stat-box {
+    border-bottom: 1px dashed var(--color-border-subtle);
+    padding-bottom: var(--space-2);
+  }
+
+  .footer-stat-box:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   /* Projects & Learning Grids */
@@ -191,5 +264,40 @@
 
   .status-bar__shortcuts {
     display: none !important;
+  }
+}
+
+/* Narrow mobile screens */
+@media screen and (max-width: 480px) {
+  .status-bar__location {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   TOUCH & GESTURE OPTIMIZATIONS (HOVER FIXES)
+   ========================================================================== */
+@media (hover: none) {
+  /* Disable stuck hover translations and card lifts */
+  .editorial-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Make images color by default since touch screens have no hover state */
+  #hero .image-container img,
+  #about .image-container img,
+  .timeline-item-photo {
+    filter: grayscale(0%) contrast(1) !important;
+  }
+  
+  #hero .image-container:hover img,
+  #about .image-container:hover img {
+    transform: none !important;
+  }
+  
+  #hero .image-container:hover .image-shadow,
+  #about .image-container:hover .image-shadow {
+    transform: none !important;
   }
 }
