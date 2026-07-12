@@ -182,4 +182,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 9. Mobile Touch Image Color Toggle
+  const imageContainers = document.querySelectorAll('.image-container');
+  imageContainers.forEach(container => {
+    container.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent immediate document click trigger
+      
+      const isActive = container.classList.contains('active-touch');
+      imageContainers.forEach(c => c.classList.remove('active-touch'));
+      
+      if (!isActive) {
+        container.classList.add('active-touch');
+      }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    imageContainers.forEach(container => {
+      container.classList.remove('active-touch');
+    });
+  });
 });

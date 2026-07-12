@@ -55,8 +55,7 @@
   }
   
   .hero-shortcut-hint {
-    margin: 0 auto;
-    text-align: left;
+    display: none !important;
   }
 
   /* About Layout Wrap */
@@ -117,44 +116,48 @@
 
   /* Header mobile adjustment */
   header.site-header {
-    padding: var(--space-3) 0;
+    padding: var(--space-2) 0;
   }
 
   header.site-header .nav-container {
+    display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
+    gap: var(--space-2);
   }
 
   header.site-header nav {
     width: 100%;
-    flex-direction: column;
-    gap: var(--space-3);
-    align-items: center;
   }
 
   header.site-header nav ul {
-    width: 100%;
-    justify-content: center;
+    display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2) var(--space-4);
+    gap: 6px 12px;
+    justify-content: flex-start;
   }
 
   header.site-header nav a {
-    font-size: var(--text-xs);
-    padding: 6px 8px;
+    font-size: 0.75rem;
+    padding: 4px 0;
     display: inline-block;
+    letter-spacing: 0.02em;
   }
 
   .theme-toggle-btn {
+    position: absolute;
+    top: 0;
+    right: var(--container-pad);
+    margin: 0;
+    padding: 3px 8px;
+    font-size: 0.65rem;
     width: auto;
-    align-self: center;
-    padding: 6px 12px;
   }
 
   /* Hero Spacing & Actions on Mobile */
   #hero {
-    padding-top: 140px; /* Space for the taller stacked mobile header */
+    padding-top: 100px; /* Space for the compact mobile header */
     padding-bottom: var(--space-6);
   }
 
@@ -262,7 +265,8 @@
     display: none !important;
   }
 
-  .status-bar__shortcuts {
+  .status-bar__shortcuts,
+  #status-help-btn {
     display: none !important;
   }
 }
@@ -284,20 +288,27 @@
     box-shadow: none !important;
   }
   
-  /* Make images color by default since touch screens have no hover state */
+  /* Make images grayscale by default since touch screens have no hover state */
   #hero .image-container img,
   #about .image-container img,
   .timeline-item-photo {
-    filter: grayscale(0%) contrast(1) !important;
+    filter: grayscale(100%) contrast(1.05) !important;
+    transform: none !important;
+  }
+  
+  #hero .image-container .image-shadow,
+  #about .image-container .image-shadow {
+    transform: none !important;
   }
   
   /* Enable offset print shadow by default on touch screens since hover is disabled */
-  #hero .image-container img,
-  #about .image-container img {
+  #hero .image-container.active-touch img,
+  #about .image-container.active-touch img {
+    filter: grayscale(0%) contrast(1) !important;
     transform: translate(-4px, -4px) !important;
   }
-  #hero .image-container .image-shadow,
-  #about .image-container .image-shadow {
+  #hero .image-container.active-touch .image-shadow,
+  #about .image-container.active-touch .image-shadow {
     transform: translate(4px, 4px) !important;
   }
 }
