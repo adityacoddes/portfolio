@@ -291,13 +291,13 @@
     filter: grayscale(0%) contrast(1) !important;
   }
   
-  #hero .image-container:hover img,
-  #about .image-container:hover img {
-    transform: none !important;
+  /* Enable offset print shadow by default on touch screens since hover is disabled */
+  #hero .image-container img,
+  #about .image-container img {
+    transform: translate(-4px, -4px) !important;
   }
-  
-  #hero .image-container:hover .image-shadow,
-  #about .image-container:hover .image-shadow {
-    transform: none !important;
+  #hero .image-container .image-shadow,
+  #about .image-container .image-shadow {
+    transform: translate(4px, 4px) !important;
   }
 }

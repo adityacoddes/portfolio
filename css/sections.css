@@ -161,6 +161,7 @@ header.site-header nav a.active {
   max-width: 320px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 #hero .image-container img {
@@ -271,6 +272,7 @@ header.site-header nav a.active {
   max-width: 340px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 #about .image-container img {
