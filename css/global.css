@@ -227,11 +227,31 @@ section:last-of-type {
   padding: var(--space-5);
   transition: transform var(--motion-medium) var(--ease-standard), box-shadow var(--motion-medium) var(--ease-standard);
   position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .editorial-card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px var(--color-border);
+}
+
+/* 3D Card Glare Styling */
+.card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 80%);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark .card-glare {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 80%);
 }
 
 /* Badges */

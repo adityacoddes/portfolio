@@ -182,4 +182,72 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 9. Initialize 3D Card Tilt Effect
+  new CardTilt();
 });
+
+/* ==========================================================================
+   3D CARD PARALLAX TILT ENGINE
+   ========================================================================== */
+class CardTilt {
+  constructor() {
+    // Only activate on hover-capable devices to prevent layout lock-ups on touch
+    if (window.matchMedia('(hover: hover)').matches) {
+      this.cards = document.querySelectorAll('.editorial-card');
+      this.init();
+    }
+  }
+
+  init() {
+    this.cards.forEach(card => {
+      // Dynamically inject glare reflection element
+      const glare = document.createElement('div');
+      glare.className = 'card-glare';
+      card.appendChild(glare);
+
+      card.addEventListener('mousemove', (e) => this.handleMouseMove(e, card, glare));
+      card.addEventListener('mouseleave', () => this.handleMouseLeave(card, glare));
+      card.addEventListener('mouseenter', () => this.handleMouseEnter(card));
+    });
+  }
+
+  handleMouseEnter(card) {
+    // Disable standard transition temporarily to ensure responsiveness
+    card.style.transition = 'none';
+  }
+
+  handleMouseMove(e, card, glare) {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const width = rect.width;
+    const height = rect.height;
+    
+    // Normalized position relative to center: range [-0.5, 0.5]
+    const normX = (x / width) - 0.5;
+    const normY = (y / height) - 0.5;
+    
+    const maxRot = 8; // Max 8 degrees of rotation for subtle, elegant depth
+    const rotX = -normY * maxRot;
+    const rotY = normX * maxRot;
+    
+    // Apply 3D perspective rotation and scale
+    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.015, 1.015, 1.015)`;
+    card.style.boxShadow = `${-normX * 12}px ${-normY * 12}px 16px rgba(0, 0, 0, 0.12)`;
+    
+    // Calculate light source angle based on mouse coordinates relative to center
+    const angle = Math.atan2(y - height / 2, x - width / 2) * (180 / Math.PI);
+    glare.style.opacity = '1';
+    glare.style.background = `linear-gradient(${angle - 90}deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%)`;
+  }
+
+  handleMouseLeave(card, glare) {
+    // Restore transition for smooth elastic spring back to rest
+    card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    card.style.boxShadow = '';
+    glare.style.opacity = '0';
+  }
+}
