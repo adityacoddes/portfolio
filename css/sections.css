@@ -798,6 +798,12 @@ body.dark .control-group select {
   padding: var(--space-4);
 }
 
+@media screen and (min-width: 601px) {
+  .learning-board-body .learning-log-card:last-child {
+    grid-column: span 2;
+  }
+}
+
 .learning-log-header {
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
