@@ -53,10 +53,10 @@
             Hello, I am<br>Aditya Wadekar<span class="cursor-blink"></span>
           </h1>
           <p class="hero-mono-label hero-animate-fade hero-delay-3">
-            Machine Learning & Robotics Student
+            Machine Learning & Data Science Student
           </p>
           <p class="subtitle hero-animate-fade hero-delay-4">
-            I am entering my third year of Robotics & Automation Engineering. I write data pipelines, design predictive models, and explore how algorithms make physical systems smarter.
+            Third-year Robotics & Automation Engineering student at AISSMS COE, Pune. I build regression and NLP models, and have processed datasets exceeding 1M rows using Pandas — most recently forecasting crop yields for 203 countries with Huber-regularized Ridge Regression.
           </p>
           
           <div class="hero-actions hero-animate-fade hero-delay-5">
@@ -91,17 +91,26 @@
           <div class="badge badge-signal">01 // Flagship Project</div>
           <h2><span class="section-num">01.</span> GATIS Predictive Analytics</h2>
           <p>
-            <strong>The Motivation:</strong> Climate anomalies and volatile trade policies cause severe disruptions in global food supplies. I wanted to build a predictive analytics system capable of forecasting crop yields and highlighting trading patterns to aid agricultural planning.
+            <strong>The Motivation:</strong> Climate volatility and trade policy shifts disrupt global crop supply chains. I built a system to forecast crop yields at a country/crop level using historical FAOSTAT data, prioritizing model stability over raw accuracy since outlier years (droughts, floods) skew simple regression models heavily.
           </p>
           <p>
             <strong>The Data Challenge:</strong> I engineered a memory-efficient Pandas pipeline to clean and process a dataset of <strong>1.1 Million historical records</strong> spanning FAOSTAT records across 203 countries and 280 crop categories.
           </p>
           <p>
-            <strong>The ML Approach:</strong> I trained localized <strong>Huber-regularized Ridge Regression models</strong> with degree-2 polynomial features. Huber loss was specifically selected to reduce sensitivity to agricultural weather anomaly outliers (droughts/floods), ensuring stable long-term predictions.
+            <strong>The ML Approach:</strong> I trained localized <strong>Huber-regularized Ridge Regression models</strong> with degree-2 polynomial features, comparing against standard OLS and plain Ridge. Huber loss reduced RMSE volatility across outlier-heavy years (droughts/floods) by 30%, without sacrificing R² on normal years.
           </p>
           <p>
             <strong>Lessons Learned:</strong> High-dimensional datasets require statistical rigor. I learned that handling outlier supply years with a robust loss function (Huber) prevents model skewing far better than simply feeding more data into complex neural networks.
           </p>
+          
+          <div style="margin-top: var(--space-4); margin-bottom: var(--space-4); display: flex; gap: var(--space-2);">
+            <a href="https://github.com/adityacoddes/GATIS-Global-Trade-Intelligence" target="_blank" class="view-code-link" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--color-border); padding: 6px 12px; transition: background 0.2s; background: transparent;" onmouseover="this.style.background='var(--color-bg-secondary)'" onmouseout="this.style.background='transparent'">
+              View Code &nearrow;
+            </a>
+            <a href="https://gatis-global-trade-intelligence.onrender.com/" target="_blank" class="view-code-link" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--color-border); padding: 6px 12px; transition: background 0.2s; background: transparent;" onmouseover="this.style.background='var(--color-bg-secondary)'" onmouseout="this.style.background='transparent'">
+              Live Site &nearrow;
+            </a>
+          </div>
           
           <div class="gatis-metric-row">
             <div class="gatis-metric">
@@ -182,48 +191,54 @@
       <h2><span class="section-num">02.</span> Machine Learning Projects</h2>
       
       <div class="projects-grid">
-        <!-- Project 1: Real Estate Analytics -->
+        <!-- Project 2: Stress Detection — NLP Mental Health Text Classification -->
         <div class="project-card-wrapper">
           <div class="editorial-card project-card">
             <div class="project-card-header">
-              <div class="badge badge-blue">Predictive Modeling</div>
-              <h3 class="project-card-title">Real Estate ML Analytics</h3>
+              <div class="badge badge-blue">Natural Language Processing</div>
+              <h3 class="project-card-title">Stress Detection — NLP Mental Health Text Classification</h3>
             </div>
             <div class="project-card-body">
               <p>
-                An end-to-end data pipeline and machine learning regression model designed to predict property valuations using housing features and multivariate attributes.
+                An NLP text classification pipeline that processes raw text to identify stress-indicative language, comparing multiple models and deploying via a FastAPI backend for real-time predictions.
               </p>
               <div class="tech-tag-container">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">Scikit-Learn</span>
                 <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">EDA</span>
+                <span class="tech-tag">Scikit-Learn</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">TF-IDF</span>
+                <span class="tech-tag">FastAPI</span>
               </div>
             </div>
-            <div class="project-card-footer">
+            <div class="project-card-footer" style="display: flex; justify-content: space-between; align-items: center;">
               <button class="project-card-expand-btn">
                 <span class="btn-label">Technical Details</span> &darr;
               </button>
+              <a href="https://github.com/adityacoddes/Stress-Detection" target="_blank" class="view-code-link" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                View Code &nearrow;
+              </a>
             </div>
             
             <div class="project-drawer">
               <div class="drawer-content">
                 <h4>Motivation</h4>
-                <p>To understand the core structural factors (size, location indices, rooms) that impact real estate pricing, establishing an end-to-end pipeline from data cleaning to evaluation.</p>
+                <p>Text-based mental health signals are abundant but unstructured, and manual review doesn't scale. I built a classifier to flag stress-indicative language in raw text, framed as an early-detection support tool.</p>
                 <h4>Implementation</h4>
                 <ul>
-                  <li>Designed robust feature engineering scripts to handle missing records and normalize distributions.</li>
-                  <li>Executed thorough Exploratory Data Analysis (EDA) to resolve multi-collinearity.</li>
-                  <li>Trained and compared regularized regression models (Lasso & Ridge) to ensure generalization.</li>
+                  <li>Trained on a Kaggle dataset of 53,000+ labeled text samples with inconsistent formatting and class imbalance.</li>
+                  <li>Cleaned and tokenized raw text, then built TF-IDF feature representations, addressing class imbalance to avoid majority-class bias.</li>
+                  <li>Trained and compared multiple classification models (Logistic Regression, Naive Bayes, Linear SVM, and LightGBM), optimizing for the precision/recall tradeoff given the asymmetric cost of false negatives vs false positives.</li>
+                  <li>Deployed the trained model via a FastAPI backend, exposing an endpoint for real-time text-to-prediction inference.</li>
                 </ul>
                 <h4>Lessons Learned</h4>
-                <p>Feature scaling and proper handling of categorical variables are critical. I learned how multi-collinearity can inflate regression coefficients and how regularization stabilizes model weight calculations.</p>
+                <p>Achieved 80.44% accuracy / 80.0% F1-score on held-out data. Learned that dataset scale alone doesn't guarantee model quality - class imbalance handling and metric choice (recall on the minority class) mattered more than raw sample count for this problem.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 2: Personalized Recommendation Engine -->
+        <!-- Project 3: Personalized Recommendation Engine -->
         <div class="project-card-wrapper">
           <div class="editorial-card project-card">
             <div class="project-card-header">
@@ -232,7 +247,7 @@
             </div>
             <div class="project-card-body">
               <p>
-                A content-based recommendation system that analyzes metadata features to suggest tailored choices based on cosine similarity scores.
+                A content-based recommender for movies, using TF-IDF vectorization on metadata and cosine similarity to rank top-N matches. Tested against 4,803 items with cosine similarity distance metrics.
               </p>
               <div class="tech-tag-container">
                 <span class="tech-tag">Python</span>
@@ -241,10 +256,13 @@
                 <span class="tech-tag">Vectorization</span>
               </div>
             </div>
-            <div class="project-card-footer">
+            <div class="project-card-footer" style="display: flex; justify-content: space-between; align-items: center;">
               <button class="project-card-expand-btn">
                 <span class="btn-label">Technical Details</span> &darr;
               </button>
+              <a href="https://github.com/adityacoddes/movie-recommender-system" target="_blank" class="view-code-link" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                View Code &nearrow;
+              </a>
             </div>
             
             <div class="project-drawer">
@@ -264,42 +282,46 @@
           </div>
         </div>
 
-        <!-- Project 3: Email Spam Classification -->
+        <!-- CONSIDER REMOVING: redundant with GATIS (both regression), consider replacing with a Computer Vision project if one becomes available -->
+        <!-- Project 4: Real Estate Analytics -->
         <div class="project-card-wrapper">
           <div class="editorial-card project-card">
             <div class="project-card-header">
-              <div class="badge badge-blue">Natural Language Processing</div>
-              <h3 class="project-card-title">Email Spam Detection</h3>
+              <div class="badge badge-blue">Predictive Modeling</div>
+              <h3 class="project-card-title">Real Estate ML Analytics</h3>
             </div>
             <div class="project-card-body">
               <p>
-                An NLP classification script designed to tokenize emails, extract TF-IDF features, and filter spam using Naive Bayes classifiers.
+                A regression pipeline predicting property valuations from a 545-record housing dataset, comparing Lasso and Ridge regularization to handle multicollinearity between size, location index, and room count. Final model: 66.09% R², 1,083,568 RMSE.
               </p>
               <div class="tech-tag-container">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">TF-IDF</span>
-                <span class="tech-tag">Naive Bayes</span>
+                <span class="tech-tag">Scikit-Learn</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">EDA</span>
               </div>
             </div>
-            <div class="project-card-footer">
+            <div class="project-card-footer" style="display: flex; justify-content: space-between; align-items: center;">
               <button class="project-card-expand-btn">
                 <span class="btn-label">Technical Details</span> &darr;
               </button>
+              <a href="https://github.com/adityacoddes/house-price-predictor" target="_blank" class="view-code-link" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                View Code &nearrow;
+              </a>
             </div>
             
             <div class="project-drawer">
               <div class="drawer-content">
                 <h4>Motivation</h4>
-                <p>Gaining hands-on familiarity with text processing pipelines, vector representations of words, and discrete probability-based classification.</p>
+                <p>To understand the core structural factors (size, location indices, rooms) that impact real estate pricing, establishing an end-to-end pipeline from data cleaning to evaluation.</p>
                 <h4>Implementation</h4>
                 <ul>
-                  <li>Engineered preprocessing steps including lowercasing, punctuation removal, and tokenization.</li>
-                  <li>Transformed raw string vectors using TF-IDF vectorization to capture word importances.</li>
-                  <li>Trained and evaluated Logistic Regression and Multinomial Naive Bayes models, measuring precision/recall.</li>
+                  <li>Designed robust feature engineering scripts to handle missing records and normalize distributions.</li>
+                  <li>Executed thorough Exploratory Data Analysis (EDA) to resolve multi-collinearity.</li>
+                  <li>Trained and compared regularized regression models (Lasso & Ridge) to ensure generalization.</li>
                 </ul>
                 <h4>Lessons Learned</h4>
-                <p>NLP models are highly sensitive to vocabulary preprocessing. I learned the trade-offs of using stop-word filtering and how to minimize false positives (classifying important mail as spam).</p>
+                <p>Feature scaling and proper handling of categorical variables are critical. I learned how multi-collinearity can inflate regression coefficients and how regularization stabilizes model weight calculations.</p>
               </div>
             </div>
           </div>
@@ -337,6 +359,8 @@
             <div class="skill-item"><span>Predictive Models</span> <span class="bullet"></span></div>
             <div class="skill-item"><span>Time-Series</span> <span class="bullet"></span></div>
             <div class="skill-item"><span>EDA</span> <span class="bullet"></span></div>
+            <!-- TODO: Confirm or remove this skill before publishing. Need to verify capability to defend in an interview. -->
+            <div class="skill-item"><span>Statistical Inference (Hypothesis Testing, Distributions)</span> <span class="bullet"></span></div>
           </div>
         </div>
 
@@ -363,6 +387,7 @@
             <div class="skill-item"><span>Arduino</span> <span class="bullet"></span></div>
             <div class="skill-item"><span>Sensor Integration</span> <span class="bullet"></span></div>
             <div class="skill-item"><span>Fusion 360 (CAD)</span> <span class="bullet"></span></div>
+            <!-- TODO: Keep, move, or cut Scribus? It doesn't fit the ML/DS focus. -->
             <div class="skill-item"><span>Scribus</span> <span class="bullet"></span></div>
           </div>
         </div>
@@ -373,7 +398,8 @@
             Open Source Exposure
           </div>
           <p>
-            Contributed documentation improvements and fixes to the <strong>Pandas</strong> open-source project, gaining exposure to collaborative software development workflows, unit testing, and coding standards.
+            Submitted 2 documentation pull requests to Pandas (merged), linking the reshaping user guide and indexing API reference to the official pandas documentation. Worked within Pandas' contribution guidelines, code review process, and existing unit test suite.
+            <a href="https://github.com/pandas-dev/pandas/pulls?q=is%3Apr+author%3Aadityacoddes" target="_blank" class="view-pr-link" style="color: var(--color-action-primary); text-decoration: underline; margin-left: 8px;">View PR</a>
           </p>
         </div>
       </div>
@@ -444,40 +470,23 @@
   <section id="hobbies">
     <div class="container">
       <div class="badge">05 // DIMENSIONS</div>
-      <h2><span class="section-num">05.</span> Beyond Engineering</h2>
+      <h2><span class="section-num">05.</span> Beyond the Code</h2>
       
-      <div class="hobbies-grid">
-        <!-- Hobby 1: Football -->
-        <div class="editorial-card hobby-card">
-          <div class="hobby-icon-wrapper">
-            <span class="hobby-icon-label">[FTB]</span>
-            <h3 class="hobby-title" style="margin: 0;">Football</h3>
-          </div>
-          <p class="hobby-desc">
-            Playing as a defender has taught me team coordination, spatial strategy, and quick reactive thinking. It keeps me physically active and reinforces the value of keeping a cool head under pressure.
-          </p>
+      <div class="editorial-card" style="padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-3);">
+        <div class="beyond-strip-item" style="display: flex; flex-wrap: wrap; gap: var(--space-2); border-bottom: 1px solid var(--color-border-subtle); padding-bottom: var(--space-3);">
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); font-weight: bold;">[FTB]</span>
+          <span style="font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600;">Football:</span>
+          <span style="color: var(--color-text-secondary); font-size: 0.9rem;">Defender — team coordination, spatial strategy, and quick reactive thinking under pressure.</span>
         </div>
-
-        <!-- Hobby 2: Drums -->
-        <div class="editorial-card hobby-card">
-          <div class="hobby-icon-wrapper">
-            <span class="hobby-icon-label">[DRM]</span>
-            <h3 class="hobby-title" style="margin: 0;">Drums</h3>
-          </div>
-          <p class="hobby-desc">
-            Playing drums is all about independence of limbs, rhythm, and timing control. I find a fascinating parallel between coordinating different drum rhythms and programming multi-joint robotic kinematics!
-          </p>
+        <div class="beyond-strip-item" style="display: flex; flex-wrap: wrap; gap: var(--space-2); border-bottom: 1px solid var(--color-border-subtle); padding-bottom: var(--space-3);">
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); font-weight: bold;">[DRM]</span>
+          <span style="font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600;">Drums:</span>
+          <span style="color: var(--color-text-secondary); font-size: 0.9rem;">Limb independence and rhythm; parallels coordinating multi-joint robotic kinematics.</span>
         </div>
-
-        <!-- Hobby 3: Public Speaking -->
-        <div class="editorial-card hobby-card">
-          <div class="hobby-icon-wrapper">
-            <span class="hobby-icon-label">[SPK]</span>
-            <h3 class="hobby-title" style="margin: 0;">Public Speaking</h3>
-          </div>
-          <p class="hobby-desc">
-            Anchoring fests and collaborative campus events has honed my verbal communication, allowing me to speak confidently in front of crowds and translate technical concepts into stories everyone can enjoy.
-          </p>
+        <div class="beyond-strip-item" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-action-primary); font-weight: bold;">[SPK]</span>
+          <span style="font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600;">Public Speaking:</span>
+          <span style="color: var(--color-text-secondary); font-size: 0.9rem;">Anchoring campus events; translating technical concepts into engaging stories.</span>
         </div>
       </div>
     </div>
@@ -490,7 +499,7 @@
         <div class="badge badge-signal">LET'S CONNECT</div>
         <h2>GET IN TOUCH</h2>
         <p class="contact-text">
-          I am currently seeking ML / Data Science internship opportunities. If you are looking for an active student builder who takes initiative, works well with teams, and is eager to learn, let's talk.
+          Looking for ML / Data Science internships for Summer 2025/2026, particularly in applied ML or data pipeline work. Email me directly — I respond within a day.
         </p>
         
         <a href="mailto:adityawadekar001@gmail.com" class="btn btn-primary">
