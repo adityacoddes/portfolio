@@ -203,4 +203,31 @@ document.addEventListener('DOMContentLoaded', () => {
       container.classList.remove('active-touch');
     });
   });
+
+  // 10. Certificates Slider Level Bar Controller
+  const scroller = document.getElementById('certs-scroller');
+  const indicatorBar = document.getElementById('certs-indicator-bar');
+  if (scroller && indicatorBar) {
+    scroller.addEventListener('scroll', () => {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      if (maxScroll > 0) {
+        const ratio = scroller.scrollLeft / maxScroll;
+        indicatorBar.style.transform = `translateX(${ratio * 185}%)`;
+      }
+    });
+  }
 });
+
+// Certificates Carousel Smooth Scroll Controller
+window.scrollCerts = function(direction) {
+  const container = document.getElementById('certs-scroller');
+  if (container) {
+    const scrollAmount = container.clientWidth * 0.75;
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+};
+
+

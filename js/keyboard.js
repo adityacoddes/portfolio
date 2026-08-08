@@ -11,6 +11,7 @@ class KeyboardEngine {
       { id: 'skills', name: 'Technical Skills' },
       { id: 'learning', name: 'Currently Learning' },
       { id: 'hobbies', name: 'Beyond Engineering' },
+      { id: 'certificates', name: 'Credentials' },
       { id: 'contact', name: 'Contact Info' }
     ];
     
@@ -68,7 +69,7 @@ class KeyboardEngine {
           </li>
           <li class="keyboard-shortcut-row">
             <span>Jump to Section</span>
-            <span class="keys"><kbd>1</kbd> - <kbd>7</kbd></span>
+            <span class="keys"><kbd>1</kbd> - <kbd>8</kbd></span>
           </li>
         </ul>
         <button class="keyboard-modal-close" id="close-kbd-modal">Dismiss Guide</button>

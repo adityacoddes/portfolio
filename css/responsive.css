@@ -245,10 +245,29 @@
   }
 
   /* Contact and buttons */
+  .contact-card {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .contact-text {
+    font-size: 1rem;
+  }
+
+  .contact-card .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
   .contact-links {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: var(--space-2);
+  }
+
+  .contact-links .btn {
+    text-align: center;
+    justify-content: center;
   }
 
   .btn {
@@ -312,3 +331,4 @@
     transform: translate(4px, 4px) !important;
   }
 }
+
