@@ -133,16 +133,25 @@
 
   header.site-header nav ul {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-    justify-content: flex-start;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+  }
+
+  header.site-header nav ul::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome/Safari/Webkit */
   }
 
   header.site-header nav a {
-    font-size: 0.75rem;
+    font-size: 0.68rem !important;
     padding: 4px 0;
     display: inline-block;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
   }
 
   .theme-toggle-btn {
